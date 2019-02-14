@@ -228,6 +228,12 @@ public class FlutterBluePlusPlugin implements FlutterPlugin, MethodCallHandler, 
         break;
       }
 
+      case "setUniqueId":
+      {
+        result.success(null);
+        break;
+      }
+
       case "name":
       {
         String name = mBluetoothAdapter.getName();

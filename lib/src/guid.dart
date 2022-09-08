@@ -33,9 +33,9 @@ class Guid {
     input = _removeNonHexCharacters(input);
     final bytes = hex.decode(input);
 
-    if (bytes.length != 16) {
-      throw const FormatException("The format is invalid");
-    }
+    // if (bytes.length != 16) {
+    //   throw const FormatException("The format is invalid");
+    // }
 
     return bytes;
   }

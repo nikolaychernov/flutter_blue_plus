@@ -57,6 +57,7 @@ class Guid {
 
   @override
   String toString() {
+    if (_bytes.length == 2) return hex.encode(_bytes.sublist(0, 2));
     String one = hex.encode(_bytes.sublist(0, 4));
     String two = hex.encode(_bytes.sublist(4, 6));
     String three = hex.encode(_bytes.sublist(6, 8));
@@ -68,6 +69,7 @@ class Guid {
   String toMac() {
     String one = hex.encode(_bytes.sublist(0, 1));
     String two = hex.encode(_bytes.sublist(1, 2));
+    if (_bytes.length == 2) return "$one:$two".toUpperCase();
     String three = hex.encode(_bytes.sublist(2, 3));
     String four = hex.encode(_bytes.sublist(3, 4));
     String five = hex.encode(_bytes.sublist(4, 5));

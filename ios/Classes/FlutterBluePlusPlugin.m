@@ -101,6 +101,10 @@ typedef NS_ENUM(NSUInteger, LogLevel) {
     } else {
       result(@(NO));
     }
+  } else if([@"openBluetoothSettings" isEqualToString:call.method]) {
+    [[CBCentralManager alloc] initWithDelegate:nil queue:nil
+                options: @{CBCentralManagerOptionShowPowerAlertKey: @(YES)}];
+    result(nil);
   } else if([@"name" isEqualToString:call.method]) {
     result([[UIDevice currentDevice] name]);
   } else if([@"startScan" isEqualToString:call.method]) {

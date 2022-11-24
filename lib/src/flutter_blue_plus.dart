@@ -47,6 +47,10 @@ class FlutterBluePlus {
   /// Checks if Bluetooth functionality is turned on
   Future<bool> get isOn => _channel.invokeMethod('isOn').then<bool>((d) => d);
 
+  Future<void> openBluetoothSettings() {
+    return _channel.invokeMethod('openBluetoothSettings');
+  }
+
   /// Tries to turn on Bluetooth (Android only),
   ///
   /// Returns true if bluetooth is being turned on.
